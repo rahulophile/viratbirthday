@@ -23,13 +23,13 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--indian-blue);
     position: absolute; 
     height: 90vh; 
     bottom: 0; 
-    left: 10%; /* FIX: PC par left se gap badhaya (0 se 10%) */
-    transform: translateX(-120%); /* Initial animation position adjust kiya */
+    left: 10%; 
+    transform: translateX(-120%);
 }
 .hero-text { 
     position: absolute; 
     top: 50%; 
-    right: 10%; /* FIX: PC par right se gap badhaya (5% se 10%) */
+    right: 10%; 
     transform: translateY(-50%); 
     text-align: right; 
 }
@@ -63,14 +63,16 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--indian-blue);
     .hero-content { 
         display: flex; 
         flex-direction: column; 
-        justify-content: center; /* FIX: Vertical centering (flex-end se center) */
+        justify-content: center;
         align-items: center; 
+        padding-bottom: 10vh; /* FIX: Content ko thoda upar shift karne ke liye */
     }
     .virat-png { 
-        position: relative; /* position ko relative kiya taki flexbox kaam kare */
+        position: relative; 
         height: 60vh; 
         transform: translateX(-150%); 
-        left: auto; /* Left ko reset kiya */
+        left: auto;
+        bottom: auto;
     }
     .hero-text { 
         position: relative; 
@@ -78,7 +80,7 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--indian-blue);
         text-align: center; 
         top: auto; right: auto; 
         transform: none; 
-        padding-bottom: 0; /* FIX: Extra padding hataya */
+        padding-bottom: 0;
     }
     .hero-text h1 span { transform: translateY(120%); }
     .hero-text h1 { font-size: 18vw; }

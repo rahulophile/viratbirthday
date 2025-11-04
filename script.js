@@ -1,6 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// --- NEW & IMPROVED VIDEO SWITCH LOGIC ---
+// --- VIDEO SWITCH LOGIC ---
 const videoElement = document.querySelector('.background-video');
 const mobileMediaQuery = window.matchMedia("(max-width: 768px)");
 
