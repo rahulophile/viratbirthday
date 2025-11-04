@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@700&family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --indian-blue: #002D62;
+    --indian-saffron: #F9A825;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: 'Poppins', sans-serif; background-color: var(--indian-blue); color: #1a1a1a; overflow-x: hidden; }
+
+/* HERO SECTION */
+.hero-section { height: 100vh; width: 100%; background: linear-gradient(135deg, var(--indian-blue) 0%, #00418c 100%); position: relative; overflow: hidden; }
+.scroll-instruction { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #fff; z-index: 10; transition: opacity 0.3s ease; }
+.scroll-instruction.hidden { opacity: 0; pointer-events: none; }
+.mouse-icon { width: 30px; height: 50px; border: 2px solid #fff; border-radius: 25px; margin: 0 auto 15px auto; }
+.wheel { width: 4px; height: 10px; background: #fff; border-radius: 2px; margin: 8px auto 0 auto; animation: scroll-anim 2s infinite; }
+@keyframes scroll-anim { 0% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; transform: translateY(20px); } }
+.scroll-instruction span { letter-spacing: 1px; }
+
+.hero-content { height: 100%; width: 100%; }
+.virat-png { position: absolute; height: 90vh; bottom: 0; left: 0; transform: translateX(-100%); }
+.hero-text { position: absolute; top: 50%; right: 5%; transform: translateY(-50%); text-align: right; }
+.hero-text h1 { font-family: 'Teko', sans-serif; font-size: 9vw; line-height: 1; color: #fff; text-transform: uppercase; overflow: hidden; }
+.hero-text h1 span { display: inline-block; transform: translateY(100%); }
+.hero-text h1:nth-child(2) { color: var(--indian-saffron); }
+
+
+/* --- SINGLE VIDEO SECTION --- */
+.video-section { height: 100vh; width: 100%; position: relative; display: flex; justify-content: center; align-items: center; text-align: center; overflow: hidden; }
+.background-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 2; }
+.video-text-content { position: relative; z-index: 3; color: #fff; padding: 20px; }
+.video-text-content h2 { font-family: 'Teko', sans-serif; font-size: 5rem; color: var(--indian-saffron); text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+.video-text-content p { font-size: 1.2rem; line-height: 1.7; max-width: 600px; margin: 0 auto; }
+
+/* Eye-catchy credit pill style */
+.credit-pill {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 4;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.credit-icon { font-size: 14px; }
+.credit-pill a { color: #fff; font-weight: bold; text-decoration: none; font-size: 14px; transition: color 0.3s ease; }
+.credit-pill a:hover { color: var(--indian-saffron); }
+
+
+/* --- MOBILE & TABLET --- */
+@media (max-width: 768px) {
+    .hero-content { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+    .virat-png { position: relative; height: 60vh; transform: translateX(-150%); }
+    .hero-text { position: relative; width: 100%; text-align: center; top: auto; right: auto; transform: none; padding-bottom: 5vh; }
+    .hero-text h1 span { transform: translateY(120%); }
+    .hero-text h1 { font-size: 18vw; }
+
+    /* Mobile text gap fix */
+    .video-text-content h2 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 10px; }
+    .video-text-content p { font-size: 1rem; }
+
+    .credit-pill { top: 20px; right: 20px; padding: 6px 12px; }
+    .credit-icon { font-size: 12px; }
+    .credit-pill a { font-size: 12px; }
+}
