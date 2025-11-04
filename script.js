@@ -5,34 +5,27 @@ const videoElement = document.querySelector('.background-video');
 const mobileMediaQuery = window.matchMedia("(max-width: 768px)");
 
 const setVideoSource = (event) => {
-    // `event.matches` batata hai ki media query true hai ya nahi
     if (event.matches) {
-        // Agar screen mobile/tablet hai, to highlights2.mp4 lagao
         videoElement.src = 'highlights2.mp4';
     } else {
-        // Warna PC ke liye highlights.mp4 lagao
         videoElement.src = 'highlights.mp4';
     }
 };
-
-// 1. Page load hote hi ek baar chalao
 setVideoSource(mobileMediaQuery);
-
-// 2. Ek listener add karo jo screen size badalne par function ko automatically call karega
 mobileMediaQuery.addEventListener('change', setVideoSource);
 
 
-// --- MOBILE SMOOTH SCROLL FIX (Same as before) ---
+// --- MOBILE SMOOTH SCROLL FIX ---
 ScrollTrigger.normalizeScroll(true);
 
-// --- INSTANT SCROLL ICON LOGIC (Same as before) ---
+// --- INSTANT SCROLL ICON LOGIC ---
 const scrollInstruction = document.querySelector('.scroll-instruction');
 const handleScroll = () => {
     scrollInstruction.classList.toggle('hidden', window.scrollY > 10);
 };
 window.addEventListener('scroll', handleScroll);
 
-// --- DEVICE-SPECIFIC HERO ANIMATIONS (Same as before) ---
+// --- DEVICE-SPECIFIC HERO ANIMATIONS ---
 ScrollTrigger.matchMedia({
     "(min-width: 769px)": function() {
         const pcTimeline = gsap.timeline({
@@ -57,7 +50,7 @@ ScrollTrigger.matchMedia({
 });
 
 
-// --- SIMPLE ANIMATION FOR VIDEO SECTION CONTENT (Same as before) ---
+// --- SIMPLE ANIMATION FOR VIDEO SECTION CONTENT ---
 gsap.timeline({
     scrollTrigger: {
         trigger: ".video-section",
